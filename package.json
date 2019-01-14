@@ -1,6 +1,6 @@
 {
   "name": "pochtennov-brain-games",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "first project on Hexlet",
   "main": "dist/index.js",
   "scripts": {
