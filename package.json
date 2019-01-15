@@ -1,6 +1,6 @@
 {
   "name": "pochtennov-brain-games",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "first project on Hexlet",
   "keywords": [
     "hexlet",
@@ -37,7 +37,8 @@
     "readline-sync": "^1.4.9"
   },
   "bin": {
-    "brain-games": "dist/bin/brain-games.js"
+    "brain-games": "dist/bin/brain-games.js",
+    "brain-even": "dist/bin/brain-even.js"
   },
   "files": [
     "dist"
