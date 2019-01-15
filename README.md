@@ -5,3 +5,5 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage)](https://codeclimate.com/github/codeclimate/codeclimate/test_coverage)
 
 [![Build Status](https://travis-ci.org/pochtennov/project-lvl1-s412.svg?branch=master)](https://travis-ci.org/pochtennov/project-lvl1-s412)
+
+[![asciicast](https://asciinema.org/a/BMxL1gk71bZ8GryvrzwBv21uK.svg)](https://asciinema.org/a/BMxL1gk71bZ8GryvrzwBv21uK)
