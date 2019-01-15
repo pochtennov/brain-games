@@ -1,3 +1,3 @@
 #!/usr/bin/env node
-import names from "..";
-names();
+import greetingsToUser from "..";
+greetingsToUser();
