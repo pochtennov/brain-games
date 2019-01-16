@@ -13,8 +13,13 @@ const round = (firstName) => {
   const question = Math.floor(Math.random() * upperBoundOfQuestionNumber);
   console.log(`Question: ${question}`);
   const answer = readlineSync.question('Your answer: ');
-  const rightAnswer = isEvenNumber(question);
-  if ((rightAnswer === true && answer === 'yes') || (rightAnswer === false && answer === 'no')) {
+  let rightAnswer = '';
+  if (isEvenNumber(question) === true) {
+    rightAnswer = 'yes';
+  } else {
+    rightAnswer = 'no';
+  }
+  if (rightAnswer === answer) {
     console.log('Correct!');
     return true;
   }
