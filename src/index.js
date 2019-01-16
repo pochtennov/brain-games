@@ -1,41 +1,46 @@
 import readlineSync from 'readline-sync';
 
-export function greetingsToUser() {
-  console.log('Welcome to the Brain Games!');
-  console.log('');
-  const firstName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${firstName}!`);
-}
+const isEvenNumber = (number) => {
+  if (number % 2 === 0) {
+    return true;
+  }
+  return false;
+};
 
-export function isEvenGame() {
-  const isEvenNumber = (number) => {
-    if (number % 2 === 0) {
-      return 'yes';
-    }
-    return 'no';
-  };
+const round = (firstName) => {
+  const upperBoundOfQuestionNumber = 101;
+  // returns a random integer from 0 to 100
+  const question = Math.floor(Math.random() * upperBoundOfQuestionNumber);
+  console.log(`Question: ${question}`);
+  const answer = readlineSync.question('Your answer: ');
+  const rightAnswer = isEvenNumber(question);
+  if ((rightAnswer === true && answer === 'yes') || (rightAnswer === false && answer === 'no')) {
+    console.log('Correct!');
+    return true;
+  }
+  console.log(`'${answer}' is wrong answer =(. Correct answer was '${rightAnswer}'`);
+  console.log(`Try again, ${firstName}`);
+  return false;
+};
 
-  const round = (firstName) => {
-    const randomNumber = Math.floor(Math.random() * 101); // returns a random integer from 0 to 100
-    console.log(`Question: ${randomNumber}`);
-    const answer = readlineSync.question('Your answer: ');
-    if (isEvenNumber(randomNumber) === answer) {
-      console.log('Correct!');
-      return 1;
-    }
-    console.log(`'${answer}' is wrong answer =(. Correct answer was '${isEvenNumber(randomNumber)}'`);
-    console.log(`Try again, ${firstName}`);
-    return 0;
-  };
-
+export const isEvenGame = () => {
   console.log('Welcome to the Brain Games!');
   console.log('Answer "yes" if number even otherwise answer "no"');
   const firstName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${firstName}!`);
-  let numberOfCorrectRounds = 0;
 
-  while (numberOfCorrectRounds < 3) {
-    numberOfCorrectRounds += round(firstName);
+  for (let numberOfRounds = 1; numberOfRounds <= 3; numberOfRounds += 1) {
+    if (round(firstName) === false) {
+      return;
+    }
   }
   console.log(`Congratulations, ${firstName}`);
-}
+};
+
+
+export const greetingsToUser = () => {
+  console.log('Welcome to the Brain Games!');
+  console.log('');
+  const firstName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${firstName}!`);
+};
