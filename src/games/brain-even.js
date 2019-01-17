@@ -1,11 +1,6 @@
 import readlineSync from 'readline-sync';
 
-const isEvenNumber = (number) => {
-  if (number % 2 === 0) {
-    return true;
-  }
-  return false;
-};
+const isEvenNumber = number => number % 2 === 0;
 
 const round = () => {
   const upperBoundOfQuestionNumber = 101;
@@ -14,7 +9,7 @@ const round = () => {
   console.log(`Question: ${question}`);
   const answer = readlineSync.question('Your answer: ');
   let rightAnswer = '';
-  if (isEvenNumber(question) === true) {
+  if (isEvenNumber(question)) {
     rightAnswer = 'yes';
   } else {
     rightAnswer = 'no';
@@ -31,8 +26,9 @@ const round = () => {
 const isEvenGame = () => {
   console.log('Answer "yes" if number even otherwise answer "no"');
 
-  for (let numberOfRounds = 1; numberOfRounds <= 3; numberOfRounds += 1) {
-    if (round() === false) {
+  const numberOfSuccessfullRounds = 3;
+  for (let numberOfRounds = 1; numberOfRounds <= numberOfSuccessfullRounds; numberOfRounds += 1) {
+    if (!round()) {
       return;
     }
   }
