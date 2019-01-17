@@ -1,11 +1,7 @@
-import readlineSync from 'readline-sync';
+import { gameEngine } from '..';
 
-const numbersMaking = () => {
-  const upperBoundOfNumbers = 101;
-  const firstNumber = Math.floor(Math.random() * upperBoundOfNumbers);
-  const secondNumber = Math.floor(Math.random() * upperBoundOfNumbers);
-  return [firstNumber, secondNumber];
-};
+const gameGoal = 'What is the result of the expression?';
+
 
 const signMaking = () => {
   const numberOfSigns = 3;
@@ -18,8 +14,16 @@ const signMaking = () => {
   }
 };
 
-const calculation = (numbers, sign) => {
-  switch (sign) {
+const questionNumbersGeneration = () => {
+  const upperBoundOfNumbers = 101;
+  const firstNumber = Math.floor(Math.random() * upperBoundOfNumbers);
+  const secondNumber = Math.floor(Math.random() * upperBoundOfNumbers);
+  const sign = signMaking();
+  return [firstNumber, secondNumber, sign];
+};
+
+const correctAnswer = (numbers) => {
+  switch (numbers[2]) {
     case '+': return (numbers[0] + numbers[1]);
     case '-': return (numbers[0] - numbers[1]);
     case '*': return (numbers[0] * numbers[1]);
@@ -27,28 +31,7 @@ const calculation = (numbers, sign) => {
   }
 };
 
-const round = (numbers, sign) => {
-  console.log(`Question: ${numbers[0]} ${sign} ${numbers[1]}`);
-  const rightAnswer = calculation(numbers, sign);
-  const userAnswer = Number(readlineSync.question('Your answer: '));
-  if (rightAnswer === userAnswer) {
-    console.log('correct!');
-    return true;
-  }
-  console.log(`'${userAnswer}' is wrong answer =(. Correct answer was '${rightAnswer}'`);
-  console.log('Try again!');
-  return false;
-};
+const question = number => `${number[0]} ${number[2]} ${number[1]}`;
 
-const calculationGame = () => {
-  console.log('What is the result of the expression?');
-  console.log('');
-  for (let numberOfRounds = 1; numberOfRounds <= 3; numberOfRounds += 1) {
-    if (round(numbersMaking(), signMaking()) === false) {
-      return;
-    }
-  }
-  console.log('Congratulations!');
-};
-
-export default calculationGame;
+export default () => gameEngine(gameGoal, question,
+  correctAnswer, questionNumbersGeneration);
