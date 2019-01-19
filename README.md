@@ -6,4 +6,4 @@
 
 [![Build Status](https://travis-ci.org/pochtennov/project-lvl1-s412.svg?branch=master)](https://travis-ci.org/pochtennov/project-lvl1-s412)
 
-[![asciicast](https://asciinema.org/a/gK04636yIO1d1TQPfoDY3rEBO.svg)](https://asciinema.org/a/gK04636yIO1d1TQPfoDY3rEBO)
+[![asciicast](https://asciinema.org/a/yhKuKvOnv8LU87hGHGjpsc8oX.svg)](https://asciinema.org/a/yhKuKvOnv8LU87hGHGjpsc8oX)
