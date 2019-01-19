@@ -1,11 +1,12 @@
 import { gameEngine } from '..';
+import generateNum from '../utils/generateNum';
 
 const gameGoal = 'What is the result of the expression?';
 
-
 const signMaking = () => {
-  const numberOfSigns = 3;
-  const randomSign = Math.floor(Math.random() * (1 + numberOfSigns));
+  const upperBound = 3;
+  const lowerBound = 0;
+  const randomSign = generateNum(lowerBound, upperBound);
   switch (randomSign) {
     case 1: return '+';
     case 2: return '-';
@@ -31,7 +32,11 @@ const correctAnswer = (numbers) => {
   }
 };
 
-const question = number => `${number[0]} ${number[2]} ${number[1]}`;
+const question = () => {
+  const questionNumbers = questionNumbersGeneration();
+  const roundCorrectAnswer = correctAnswer(questionNumbers);
+  const roundQuestion = `${questionNumbers[0]} ${questionNumbers[2]} ${questionNumbers[1]}`;
+  return [roundQuestion, roundCorrectAnswer];
+};
 
-export default () => gameEngine(gameGoal, question,
-  correctAnswer, questionNumbersGeneration);
+export default () => gameEngine(gameGoal, question);

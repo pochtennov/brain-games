@@ -1,21 +1,23 @@
 import { gameEngine } from '..';
+import generateNum from '../utils/generateNum';
 
 const gameGoal = 'Answer "yes" if number even otherwise answer "no"';
 
 const questionNumberGeneration = () => {
   const upperBoundOfNumbers = 101;
-  return Math.floor(Math.random() * upperBoundOfNumbers);
+  const lowerBoundOfNumbers = 0;
+  return generateNum(lowerBoundOfNumbers, upperBoundOfNumbers);
 };
 
 const isEvenNumber = number => number % 2 === 0;
 
-const correctAnswer = (number) => { // If I write return as ternary operator => lint error
-  if (isEvenNumber(number)) {
-    return 'yes';
-  } return 'no';
+const correctAnswer = number => (isEvenNumber(number) ? 'yes' : 'no');
+
+const question = () => {
+  const questionNumbers = questionNumberGeneration();
+  const roundCorrectAnswer = correctAnswer(questionNumbers);
+  const roundQuestion = `${questionNumbers}`;
+  return [roundQuestion, roundCorrectAnswer];
 };
 
-const question = number => `${number}`;
-
-export default () => gameEngine(gameGoal, question,
-  correctAnswer, questionNumberGeneration);
+export default () => gameEngine(gameGoal, question);
