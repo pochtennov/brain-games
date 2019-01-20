@@ -7,12 +7,10 @@ const lowerBoundOfNumbers = 0;
 
 const isEvenNumber = number => number % 2 === 0;
 
-const getCorrectAnswer = number => (isEvenNumber(number) ? 'yes' : 'no');
-
 const generateGameData = () => {
   const num = generateNum(lowerBoundOfNumbers, upperBoundOfNumbers);
   const question = `${num}`;
-  const correctAnswer = getCorrectAnswer(num);
+  const correctAnswer = (isEvenNumber(num) ? 'yes' : 'no');
   return [question, correctAnswer];
 };
 
