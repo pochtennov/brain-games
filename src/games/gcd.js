@@ -1,7 +1,9 @@
-import { gameEngine } from '..';
+import gameEngine from '..';
 import generateNum from '../utils';
 
 const gameGoal = 'Find the greatest common divisor of given numbers.';
+const upperBoundOfNumbers = 101;
+const lowerBoundOfNumbers = 0;
 
 const gcd = (a, b) => {
   if (b === 0) {
@@ -12,8 +14,6 @@ const gcd = (a, b) => {
 };
 
 const generateGameData = () => {
-  const upperBoundOfNumbers = 101;
-  const lowerBoundOfNumbers = 0;
   const firstNumber = generateNum(lowerBoundOfNumbers, upperBoundOfNumbers);
   const secondNumber = generateNum(lowerBoundOfNumbers, upperBoundOfNumbers);
   const question = `${firstNumber} ${secondNumber}`;

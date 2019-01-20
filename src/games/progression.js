@@ -1,33 +1,25 @@
-import { gameEngine } from '..';
+import gameEngine from '..';
 import generateNum from '../utils';
 
 const gameGoal = 'What number is missing in the progression?';
 const progressionLength = 10;
-
-const progressionGeneration = () => {
-  const upperBoundOfProgressionStart = 9;
-  const lowerBoundOfProgressionStart = 0;
-  const progressionStart = generateNum(lowerBoundOfProgressionStart, upperBoundOfProgressionStart);
-  const upperBoundOfProgressionDiff = 8;
-  const lowerBoundOfProgressionDiff = 2;
-  const progressionDiff = generateNum(lowerBoundOfProgressionDiff, upperBoundOfProgressionDiff);
-  const progression = [];
-  for (let i = 0; i < progressionLength; i += 1) {
-    progression.push(progressionStart + (progressionDiff * i));
-  }
-  return progression;
-};
+const upperBoundOfProgressionStart = 9;
+const lowerBoundOfProgressionStart = 0;
+const upperBoundOfProgressionDiff = 8;
+const lowerBoundOfProgressionDiff = 2;
 
 const generateGameData = () => {
-  const progression = progressionGeneration();
+  const progressionStart = generateNum(lowerBoundOfProgressionStart,
+    upperBoundOfProgressionStart);
+  const progressionDiff = generateNum(lowerBoundOfProgressionDiff, upperBoundOfProgressionDiff);
   const emptyPosition = generateNum(0, progressionLength - 1);
-  const correctAnswer = progression[emptyPosition];
+  const correctAnswer = progressionStart + progressionDiff * emptyPosition;
   let question = '';
-  for (let i = 0; i < progression.length; i += 1) {
+  for (let i = 0; i < progressionLength; i += 1) {
     if (i === emptyPosition) {
       question += '.. ';
     } else {
-      question += `${progression[i]} `;
+      question += `${progressionStart + progressionDiff * i} `;
     }
   }
   return [question, correctAnswer];
