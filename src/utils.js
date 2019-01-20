@@ -1,4 +1,5 @@
-const generateNum = (numStart, numEnd) => (Math.floor(Math.random()
-  * (numEnd - numStart + 1)) + numStart);
+const generateNum = (numStart, numEnd) => (
+  Math.floor((numEnd - numStart + 1) * Math.random() + numStart)
+);
 
 export default generateNum;

@@ -12,7 +12,8 @@ const getCorrectAnswer = number => (isEvenNumber(number) ? 'yes' : 'no');
 const generateGameData = () => {
   const num = generateNum(lowerBoundOfNumbers, upperBoundOfNumbers);
   const question = `${num}`;
-  return [question, getCorrectAnswer(num)];
+  const correctAnswer = String(getCorrectAnswer(num));
+  return [question, correctAnswer];
 };
 
 export default () => gameEngine(gameGoal, generateGameData);

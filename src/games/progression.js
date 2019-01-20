@@ -13,7 +13,7 @@ const generateGameData = () => {
     upperBoundOfProgressionStart);
   const progressionDiff = generateNum(lowerBoundOfProgressionDiff, upperBoundOfProgressionDiff);
   const emptyPosition = generateNum(0, progressionLength - 1);
-  const correctAnswer = progressionStart + progressionDiff * emptyPosition;
+  const correctAnswer = String(progressionStart + progressionDiff * emptyPosition);
   let question = '';
   for (let i = 0; i < progressionLength; i += 1) {
     if (i === emptyPosition) {
@@ -22,6 +22,7 @@ const generateGameData = () => {
       question += `${progressionStart + progressionDiff * i} `;
     }
   }
+  question = question.trim();
   return [question, correctAnswer];
 };
 

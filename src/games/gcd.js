@@ -17,7 +17,7 @@ const generateGameData = () => {
   const firstNumber = generateNum(lowerBoundOfNumbers, upperBoundOfNumbers);
   const secondNumber = generateNum(lowerBoundOfNumbers, upperBoundOfNumbers);
   const question = `${firstNumber} ${secondNumber}`;
-  const correctAnswer = gcd(firstNumber, secondNumber);
+  const correctAnswer = String(gcd(firstNumber, secondNumber));
   return [question, correctAnswer];
 };
 
