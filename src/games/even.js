@@ -12,7 +12,7 @@ const getCorrectAnswer = number => (isEvenNumber(number) ? 'yes' : 'no');
 const generateGameData = () => {
   const num = generateNum(lowerBoundOfNumbers, upperBoundOfNumbers);
   const question = `${num}`;
-  const correctAnswer = String(getCorrectAnswer(num));
+  const correctAnswer = getCorrectAnswer(num);
   return [question, correctAnswer];
 };
 
