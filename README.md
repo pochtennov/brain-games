@@ -4,7 +4,7 @@
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/30282aae02108f306b43/test_coverage)](https://codeclimate.com/github/pochtennov/project-lvl1-s412/test_coverage)
 
-[![Build Status](https://travis-ci.org/pochtennov/project-lvl1-s412.svg?branch=master)](https://travis-ci.org/pochtennov/project-lvl1-s412)
+[![Build Status](https://travis-ci.org/pochtennov/brain-games.svg?branch=master)](https://travis-ci.org/pochtennov/brain-games)
 
 [![asciicast](https://asciinema.org/a/6EZJT7yrjmRR6JBPOd7hcItAT.svg)](https://asciinema.org/a/6EZJT7yrjmRR6JBPOd7hcItAT)
 
