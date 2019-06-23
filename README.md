@@ -1,4 +1,4 @@
-# project-lvl1-s412
+# Brain-games
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/30282aae02108f306b43/maintainability)](https://codeclimate.com/github/pochtennov/project-lvl1-s412/maintainability)
 
